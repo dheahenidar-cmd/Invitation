@@ -485,17 +485,6 @@
                         <select id="statusHadir" class="form-kontrol" required>
                             <option value="Hadir">✓ Ya, Saya Akan Hadir</option>
                             <option value="Tidak Hadir">✕ Maaf, Tidak Bisa Hadir</option>
-                            <option value="Ragu-ragu">? Masih Ragu-ragu</option>
-                        </select>
-                    </div>
-
-                    <div class="form-grup">
-                        <label for="jumlahTamu">Jumlah Orang :</label>
-                        <select id="jumlahTamu" class="form-kontrol">
-                            <option value="1">1 Orang</option>
-                            <option value="2">2 Orang</option>
-                            <option value="3">3 Orang</option>
-                            <option value="4">4 Orang</option>
                         </select>
                     </div>
 
@@ -560,12 +549,11 @@
             event.preventDefault();
             var nama = document.getElementById("namaTamu").value;
             var status = document.getElementById("statusHadir").value;
-            var jumlah = document.getElementById("jumlahTamu").value;
             var pesan = document.getElementById("pesanDoa").value;
 
             var kelasStatus = "hadir-ya";
             var teksHadir = status + " (" + jumlah + " Orang)";
-            if (status === "Tidak Hadir" || status === "Ragu-ragu") {
+            if (status === "Tidak Hadir") {
                 kelasStatus = "hadir-tidak";
                 teksHadir = status;
             }
